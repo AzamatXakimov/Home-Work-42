@@ -5,6 +5,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 
 
 /* ROOT */
@@ -1030,7 +1037,7 @@ only screen and (                min-resolution: 2dppx) {
     line-height: 21px;
     
     color: #fff;
-    background: var(--main-text-color);
+    background-color: var(--main-text-color);
     border: none;
     border-radius: 3px;
     -webkit-transition: 0.3s ease;
@@ -1726,13 +1733,26 @@ only screen and (                min-resolution: 2dppx) {
     content: "";
 }
 
+.hero-asked-questions__list{
+    margin-top: 63px;
+    margin-bottom: 0;
+    margin-left: 112px;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-asked-questions__item{
+    margin-bottom: 18px;
+}
+.hero-asked-questions__item:last-child{
+    margin-bottom: 0;
+}
+
 .hero-asked-questions__details {
     position: relative;
     top: 0;
     left: 0;
     width: 752px;
-    margin-bottom: 18px;
-    margin-left: 112px;
     padding-top: 23px;
     padding-right: 41px;
     padding-bottom: 32px;
@@ -1747,9 +1767,7 @@ only screen and (                min-resolution: 2dppx) {
     opacity: 0.5;
     cursor: not-allowed;
 }
-.hero-asked-questions__details:nth-child(2){
-    margin-top: 63px;
-}
+
 .hero-asked-questions__details:last-child{
     margin-bottom: 0;
 }
@@ -1840,7 +1858,7 @@ only screen and (                min-resolution: 2dppx) {
     background-position: center;
     content: "";
 }
-.hero-asked-questions__details:nth-child(2n + 1) .hero-asked-questions__time::before {
+.hero-asked-questions__item:nth-child(2n + 1) .hero-asked-questions__details .hero-asked-questions__time::before {
     display: inline-block;
     width: 23px;
     height: 20px;
@@ -1994,7 +2012,7 @@ only screen and (                min-resolution: 2dppx) {
     padding-bottom: 206px;
     background-image: url("../images/how-find-bg.svg");
     background-repeat: no-repeat;
-    background-position: calc(50% + 205px) calc(50% - 250px);
+    background-position: calc(50% + 207px) calc(50% - 250px);
 }
 
 .how-find-us__container-box {
@@ -2017,20 +2035,7 @@ only screen and (                min-resolution: 2dppx) {
     
     color: var(--main-text-color);
 }
-.how-find-us__text::before {
-    position: absolute;
-    top: -137px;
-    left: calc(50% + 10px);
-    display: inline-block;
-    width: 112px;
-    height: 113px;
-    margin-right: auto;
-    margin-left: auto;
-    background-image: url("../images/how-find-icon.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    content: "";
-}
+
 
 .how-find-us__box {
     position: relative;
@@ -2266,4 +2271,249 @@ only screen and (                min-resolution: 2dppx) {
     text-align: right;
     
     color: #5c5c5c;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+.modal--open{
+    display: block;
+}
+.site-body__stop{
+    overflow: hidden;
+}
+
+.modal__window {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 850px;
+    margin: 0 auto;
+    padding-top: 119px;
+    padding-right: 51px;
+    padding-bottom: 137px;
+    padding-left: 70px;
+    background-color: var(--main-hover-color);
+    background-image: url("../images/modal-bg.svg"), url("../images/modal-dog-bg.png");
+    background-repeat: no-repeat;
+    background-position: center, left bottom;
+    -webkit-animation-name: modal-animation;
+            animation-name: modal-animation;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+}
+@-webkit-keyframes modal-animation{
+    0%{
+        top: -665px;   
+    }
+
+    100%{
+        top: 100px; 
+    }
+}
+@keyframes modal-animation{
+    0%{
+        top: -665px;   
+    }
+
+    100%{
+        top: 100px; 
+    }
+}
+.modal__x-button {
+    position: absolute;
+    top: 21px;
+    left: 20px;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../images/X.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modal__authorization {
+    padding-top: 29px;
+    margin-right: 20px;
+}
+
+.modal__authorization-text {
+    display: inline-block;
+    font-size: 20px;
+
+    color: var(--main-text-color);
+}
+
+.modal__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 238px;
+    margin-top: 21px;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: var(--main-text-color);
+    background-color: #fff;
+}
+.modal__link::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+}
+
+/* .modal__link--google {
+} */
+
+.modal__link--google::before {
+    background-image: url("../images/google.svg");
+}
+
+/* .modal__link--facebook {
+} */
+
+.modal__link--facebook::before {
+    background-image: url("../images/facebook.svg");
+}
+
+.modal__form-box{
+    width: 358px;
+}
+
+.modal-text{
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 54px;
+
+    color: var(--main-text-color);
+}
+
+/* .modal__form {
+} */
+
+.modal__input-zone {
+    width: 335px;
+    padding-top: 16px;
+    padding-right: 22px;
+    padding-bottom: 13px;
+    padding-left: 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-text-color);
+    
+    background-color: #fff;
+    border: none;
+}
+.modal__input-zone::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-desc-color);
+}
+.modal__input-zone::-moz-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-desc-color);
+}
+.modal__input-zone:-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-desc-color);
+}
+.modal__input-zone::-ms-input-placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-desc-color);
+}
+.modal__input-zone::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-desc-color);
+}
+.modal__input-zone:focus{
+    outline: 2px solid var(--main-hover-color);
+}
+.modal__input-zone:not(:focus):not(:-moz-placeholder-shown):invalid{
+    outline: 2px solid #dc4d41;
+    color: #dc4d41;
+}
+.modal__input-zone:not(:focus):not(:-ms-input-placeholder):invalid{
+    outline: 2px solid #dc4d41;
+    color: #dc4d41;
+}
+.modal__input-zone:not(:focus):not(:placeholder-shown):invalid{
+    outline: 2px solid #dc4d41;
+    color: #dc4d41;
+}
+
+.modal__input-zone--question {
+    width: 335px;
+    height: 165px;
+    margin-top: 21px;
+    margin-bottom: 27px;
+    resize: none;
+}
+
+.modal__button {
+    width: 193px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #fff;
+    background-color: #000000;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                -webkit-min-device-pixel-ratio: 2),
+only screen and (                -o-min-device-pixel-ratio: 2/1),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    .modal__window{
+        background-image: url("../images/modal-dog-bg@2x.png");
+    }
 }

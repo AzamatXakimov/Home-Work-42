@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veterinary-clinic</title>
 
-    <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <link rel="stylesheet" href="./css/main.min.css">
+    <!-- <link rel="stylesheet" href="./css/main.min.css"> -->
 </head>
-<body>
+<body class="site-body">
 
     <!-- Header start -->
     <header class="site-header">
@@ -85,7 +85,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <a class="site-header__link" href="#">
+                    <a class="site-header__link site-header__link--js-open-modal" href="#">
                         Задать вопрос
                     </a>
                 </div>
@@ -547,5 +547,40 @@
         </div>
     </footer>
     <!-- Footer finish -->
+
+    <!-- Modal start  -->
+    <div class="modal">
+        <div class="modal__window">
+            <button class="modal__x-button modal__x-button--js-close-modal" type="button"></button>
+            <div class="modal__authorization">
+                <span class="modal__authorization-text">
+                    Авторизация:
+                </span>
+                <a class="modal__link modal__link--google" href="#">
+                    Войти через Google
+                </a>
+                <a class="modal__link modal__link--facebook" href="#">
+                    Войти через Facebook
+                </a>
+            </div>
+            <div class="modal__form-box">
+                <h2 class="modal-text">
+                    Задать вопрос
+                </h2>
+                <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
+                    <input class="modal__input-zone" type="text" name="user_name" id="user_name" minlength="3"
+                    maxlength="1000000" aria-label="Enter your name" required placeholder="Ваше имя">
+    
+                    <textarea class="modal__input-zone modal__input-zone--question" name="user_question" id="user_question" 
+                    minlength="3" aria-label="Enter your question"   placeholder="Опишите Ваш вопрос.                               Например: в каком возрасте можно         прививать от бешенства?"></textarea>
+    
+                    <button class="modal__button" type="submit">Отправить </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Modal finish  -->
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
